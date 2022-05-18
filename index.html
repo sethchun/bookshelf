@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
-  <body>   
+  <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -28,16 +28,27 @@
 
           <button type="button" class="btn btn-primary search">Search</button>
           </form>
-        
+
           <hr/>
 
           <div class="books row">
           </div>
       </div>
       </div>
-    </div> 
+    </div>
+
+    <script id="book-template" type="text/x-handlebars-template">
+      <div class="book col-md-6">
+        <h4>{{ title }}</h4>
+        <div>Author: <strong>{{ author }}</strong></div>
+        <div>Pages: <strong>{{ pageCount }}</strong></div>
+        <div>ISBN: <strong>{{ isbn }}</strong></div>
+        <img src="{{imageURL}}" alt="">
+      </div>
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="main.js" type="text/javascript"></script>
   </body>
 </html>
